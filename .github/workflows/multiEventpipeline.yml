@@ -11,5 +11,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Running on a Master push"
-                run: echo"Running on master push"
+              run: echo"Running on master push"
 
