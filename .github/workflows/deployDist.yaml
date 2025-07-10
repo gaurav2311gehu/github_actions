@@ -1,0 +1,14 @@
+name: DeployDist
+
+on: [push,workflow_dispatch]
+
+
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Get Code"
+        run: 
+            echo "Cloning Repo"
+            echo "${{toJson(github)}}"
+            git clone https://github.com/mukeshphulwani66/starter-code-cicd.git
