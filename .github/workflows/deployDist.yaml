@@ -7,8 +7,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: "Get Code"
-        run: 
-            echo "Cloning Repo"
-            echo "${{toJson(github)}}"
-            git clone https://github.com/mukeshphulwani66/starter-code-cicd.git
+      - name: Get Code 
+        uses: actions/checkout@v4
+
+      - name: Install Node 
+        uses: actions/setup-node@v4
+        with: 
+            node-version: 20
+      - name: Print Node version
+        run: node -v
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Test Case
+        run: npm run test
