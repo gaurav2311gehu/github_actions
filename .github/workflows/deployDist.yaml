@@ -1,7 +1,6 @@
 name: DeployDist
 
-on: [push,workflow_dispatch]
-
+on: [push, workflow_dispatch]
 
 jobs: 
   test:
@@ -13,14 +12,13 @@ jobs:
       - name: Install Node 
         uses: actions/setup-node@v4
         with: 
-            node-version: 20
+          node-version: 20
+
       - name: Print Node version
         run: node -v
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ./starter-code-cicd
 
       - name: Run Test Case
         run: npm run test
-        working-directory: ./starter-code-cicd
